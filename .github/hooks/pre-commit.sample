@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Optional hook: install manually after review; never overwrite an existing hook.
+# Check `git config --get core.hooksPath` and `git rev-parse --git-path hooks`
+# first. If a hook already exists, integrate the invocation after reviewing it.
+# This sample does not install itself or change core.hooksPath.
+set -euo pipefail
+ROOT=$(git rev-parse --show-toplevel) || exit 2
+cd "$ROOT"
+exec python3 "$ROOT/scripts/check_secrets.py" --staged

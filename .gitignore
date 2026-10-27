@@ -1,0 +1,63 @@
+# Секреты и локальные настройки. Ignore не удаляет tracked-файлы/историю.
+.env
+.env.*
+!.env.example
+!.env.sample
+.mcp.json
+credentials.json
+*.pem
+*.key
+
+# ВНИМАНИЕ: .business/ в ЭТОМ шаблоне - плейсхолдеры, они должны быть в git.
+# ДО ввода приватных данных исключи .business/ и убери из индекса.
+# Проверяй git ls-files -- .business; это не очищает прежнюю историю.
+
+# Локальные настройки Claude Code
+.claude/settings.local.json
+
+# Зависимости
+node_modules/
+.pnpm-store/
+.yarn/
+
+# Сборки
+.next/
+dist/
+build/
+out/
+
+# Системные
+.DS_Store
+Thumbs.db
+
+# Редакторы
+.idea/
+*.swp
+*.swo
+
+# Логи
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# Тесты и кэши
+__pycache__/
+*.pyc
+.cache/
+coverage/
+.nyc_output/
+.vitest-cache/
+
+# Playwright
+playwright-report/
+test-results/
+
+# Внутренние рабочие файлы автора шаблона (не публикуются)
+TEST-PROTOCOL.md
+PUBLICATION-CHECKLIST.md
+retrospectives/*deep-review*
+retrospectives/*dry-run*
+retrospectives/*known-limitations*
+retrospectives/*pre-release*
+retrospectives/*ready-for-release*
